@@ -33,17 +33,9 @@ Constraints:
 
 class Solution {
     int missingNumber(int array[], int n) {
-        for(int i = 1; i <= n; i++) {
-            int counter = 0;
-            for(int num: array) {
-                if(i == num) {
-                    break;
-                }
-                else {
-                    counter += 1;
-                }
-            }
-            if(counter == (n-1)){
+        Arrays.sort(array);
+        for (int i = 1; i <= n; i++) {
+            if (array.length < i || array[i - 1] != i) {
                 return i;
             }
         }
