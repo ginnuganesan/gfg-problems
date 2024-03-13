@@ -37,8 +37,6 @@ Constraints:
 //Solution
 
 class Solution {
-
-    
     // a: input array
     // n: size of array
     // Function to find equilibrium point in the array.
