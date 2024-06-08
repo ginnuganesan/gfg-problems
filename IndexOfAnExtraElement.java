@@ -46,3 +46,28 @@ class Solution {
         return n-1;
     }
 }
+
+//Optimised Solution
+
+class Solution {
+    public int findExtra(int n, int arr1[], int arr2[]) {
+        // add code here.
+        if(n == 1) {
+            return 0;
+        }
+        int i = 0, j = n - 1;
+        while(i <= j) {
+            if(arr1[i] == arr2[i]) {
+                i++;
+            } else {
+                return i;
+            }
+            if(arr1[j] == arr2[j-1]) {
+                j--;
+            } else {
+                return j;
+            }
+        }
+        return -1;
+    }
+}
