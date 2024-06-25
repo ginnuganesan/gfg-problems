@@ -75,3 +75,47 @@ class Solution
         return before;
     }
 }
+
+
+//Better Solution
+
+class Solution
+{
+    public static Node addOne(Node head) 
+    { 
+        //code here.
+        Node rev = reverse(head);
+        Node revTemp = rev;
+        int carry = 1;
+        while(revTemp != null) {
+            revTemp.data = revTemp.data + carry;
+            if(revTemp.data < 10) {
+                carry = 0;
+                break;
+            }
+            revTemp.data = 0;
+            carry = 1;
+            revTemp = revTemp.next;
+        }
+        if(carry > 0) {
+            Node newNode = new Node(carry);
+            head = reverse(rev);
+            newNode.next = head;
+            return newNode;
+        }
+        return reverse(rev);
+    }
+    
+    public static Node reverse(Node head) {
+        Node before = null;
+        Node temp = head;
+        Node after = null;
+        while(temp != null) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+        return before;
+    }
+}
