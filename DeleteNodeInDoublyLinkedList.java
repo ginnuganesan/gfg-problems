@@ -78,3 +78,29 @@ class Solution
 	    return head;
     }
 }
+
+//Optimized Solution
+
+class Solution {
+    public Node deleteNode(Node head, int x) {
+        int track = 0;
+        Node temp = head;
+        while(temp != null) {
+            track++;
+            Node prev = temp.prev;
+            Node next = temp.next;
+            if(track == x) {
+                if(temp == head) {
+                    head = next;
+                } else {
+                    prev.next = next;
+                }
+                if(next != null) {
+                    next.prev = prev;   
+                }
+            }
+            temp = next;
+        }
+        return head;
+    }
+}
