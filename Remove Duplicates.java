@@ -43,3 +43,20 @@ class Solution {
         
     }
 }
+
+//Solution #1
+
+class Solution {
+    String removeDups(String str) {
+        // code here
+        int[] freq = new int[26];
+        StringBuilder s = new StringBuilder();
+        for(char ch: str.toCharArray()) {
+            if(freq[ch - '0' - 49] == 0) {
+                s.append(ch);
+                freq[ch - '0' - 49]++;
+            }
+        }
+        return s.toString();
+    }
+}
