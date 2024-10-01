@@ -26,7 +26,7 @@ Constraints:
 
 */
 
-//Solution
+//Solution 
 
 class Solution {
     public long multiplyTwoLists(Node first, Node second) {
