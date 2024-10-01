@@ -29,7 +29,7 @@ Constraints:
 
 */
 
-//Solution
+//Solution 
 
 class Solution {
     int missingNumber(int array[], int n) {
