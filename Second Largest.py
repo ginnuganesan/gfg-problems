@@ -1,4 +1,4 @@
-/* PROBLEM DESCRIPTION
+''' PROBLEM DESCRIPTION
 
 Given an array Arr of size N, print the second largest distinct element from an array. If the second largest element doesn't exist then return -1.
 
@@ -30,10 +30,11 @@ Constraints:
 2 ≤ N ≤ 105
 1 ≤ Arri ≤ 105
 
-*/
+'''
 
-//Solution
+#Solution
 
+'''Java
 class Solution {
     int print2largest(int arr[], int n) {
         // code here
@@ -45,4 +46,16 @@ class Solution {
         }
         return -1;
     }
-}
+}'''
+
+#Python
+
+class Solution:
+    def getSecondLargest(self, arr):
+        # Code Here
+        arr.sort()
+        arr.reverse()
+        for i in range(1, len(arr)):
+            if arr[i] != arr[i-1]:
+                return arr[i]
+        return -1
