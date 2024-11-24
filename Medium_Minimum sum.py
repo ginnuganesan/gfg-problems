@@ -28,7 +28,6 @@ class Solution:
     def minSum(self, arr):
         # code here
         arr.sort()
-        arr[::-1]
         num1 = 0
         num2 = 0
         for i in range(len(arr)):
