@@ -1,4 +1,4 @@
-/* PROBLEM DESCRIPTION
+''' PROBLEM DESCRIPTION
 
 Given an array Arr[] of N integers. Find the contiguous sub-array(containing at least one number) which has the maximum sum and return its sum.
 
@@ -37,9 +37,9 @@ Constraints:
 1 ≤ N ≤ 106
 -107 ≤ A[i] ≤ 107
 
-*/
+'''
 
-//Solution
+''' Java Solution
 
 class Solution{
 
@@ -61,3 +61,21 @@ class Solution{
     }
     
 }
+
+'''
+#Python Solution
+
+class Solution:
+    ##Complete this function
+    #Function to find the sum of contiguous subarray with maximum sum.
+    def maxSubArraySum(self,arr):
+        ##Your code here
+        n = len(arr)
+        curr_sum = 0
+        max_total_sum = -sys.maxsize - 1
+        for i in range(n):
+            curr_sum += arr[i]
+            max_total_sum = max(max_total_sum, curr_sum)
+            if curr_sum < 0:
+                curr_sum = 0
+        return max_total_sum
