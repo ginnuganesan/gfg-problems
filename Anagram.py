@@ -1,4 +1,4 @@
-/*PROBLEM DESCRIPTION
+'''PROBLEM DESCRIPTION
 
 Given two strings a and b consisting of lowercase characters. The task is to check whether two given strings are an anagram of each other or not. An anagram of a string is another string that contains the same characters, only the order of characters can be different. For example, act and tac are an anagram of each other.
 
@@ -30,9 +30,9 @@ Expected Auxiliary Space: O(Number of distinct characters).
 Constraints:
 1 ≤ |a|,|b| ≤ 105
 
-*/
+'''
 
-//Solution
+'''Java Solution
 
 class Solution
 {    
@@ -52,3 +52,13 @@ class Solution
         }
     }
 }
+'''
+
+#Python Solution
+
+class Solution:
+    
+    #Function is to check whether two strings are anagram of each other or not.
+    def areAnagrams(self, s1, s2):
+        #code here
+        return ''.join(sorted(s1)) == ''.join(sorted(s2))
