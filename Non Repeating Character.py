@@ -1,4 +1,4 @@
-/*
+''' PROBLEM DESCRIPTION
 
 Given a string S consisting of lowercase Latin Letters. Return the first non-repeating character in S. If there is no non-repeating character, return '$'.
 
@@ -28,9 +28,9 @@ Note: N = |S|
 Constraints:
 1 <= N <= 105
 
-*/
+'''
 
-//Solution
+''' TLE Java Solution
 
 class Solution
 {
@@ -47,3 +47,22 @@ class Solution
         return '$';
     }
 }
+
+'''
+
+#Python Solution
+
+class Solution:
+    
+    #Function to find the first non-repeating character in a string.
+    def nonRepeatingChar(self,s):
+        #code here
+        map = [0] * 26
+        for char in s:
+            map[ord(char) - ord("a")] += 1
+        
+        for i in range(len(s)):
+            if map[ord(s[i]) - ord("a")] == 1:
+                return s[i]
+        
+        return "$"
