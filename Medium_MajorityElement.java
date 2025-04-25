@@ -1,61 +1,38 @@
 /* PROBLEM DESCRIPTION
 
-Given an array A of N elements. Find the majority element in the array. A majority element in an array A of size N is an element that appears strictly more than N/2 times in the array.
- 
+Given an array arr[]. Find the majority element in the array. If no majority element exists, return -1.
 
-Example 1:
+Note: A majority element in an array is an element that appears strictly more than arr.size()/2 times in the array.
 
-Input:
-N = 3 
-A[] = {1,2,3} 
-Output:
--1
-Explanation:
-Since, each element in 
-{1,2,3} appears only once so there 
-is no majority element.
-Example 2:
+Examples:
 
-Input:
-N = 5 
-A[] = {3,1,3,3,2} 
-Output:
-3
-Explanation:
-Since, 3 is present more
-than N/2 times, so it is 
-the majority element.
-
-Your Task:
-The task is to complete the function majorityElement() which returns the majority element in the array. If no majority exists, return -1.
- 
-
-Expected Time Complexity: O(N).
-Expected Auxiliary Space: O(1).
- 
-
+Input: arr[] = [1, 1, 2, 1, 3, 5, 1]
+Output: 1
+Explanation: Since, 1 is present more than 7/2 times, so it is the majority element.
+Input: arr[] = [7]
+Output: 7
+Explanation: Since, 7 is single element and present more than 1/2 times, so it is the majority element.
+Input: arr[] = [2, 13]
+Output: -1
+Explanation: Since, no element is present more than 2/2 times, so there is no majority element.
 Constraints:
-1 ≤ N ≤ 107
-0 ≤ Ai ≤ 106
+1 ≤ arr.size() ≤ 105
+0 ≤ arr[i] ≤ 105
 
 */
 
 //Solution
 
-class Solution
-{
-    static int majorityElement(int a[], int size)
-    {
-        // your code here
+class Solution {
+    static int majorityElement(int arr[]) {
+        // code here
+        int size = arr.length;
         Map<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < size; i++) {
-            if(map.containsKey(a[i])) {
-                map.put(a[i], map.get(a[i]) + 1);
-            } else {
-                map.put(a[i], 1);
-            }
-            if(map.get(a[i]) > (size/2)) {
-                return a[i];
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+            
+            if(map.get(arr[i]) > (size/2)) {
+                return arr[i];
             }
         }
         return -1;
